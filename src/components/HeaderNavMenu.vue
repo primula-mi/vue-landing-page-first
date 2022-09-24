@@ -33,8 +33,8 @@
   padding: 0;
 }
 .nav-menu__link {
-  color: #b0b0b0;
-  font-size: 1em;
+  color: #fff;
+  font-size: 14px;
   font-weight: 600;
   font-family: "Open Sans", "Arial", sans-serif;
 }

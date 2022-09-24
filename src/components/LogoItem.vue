@@ -14,6 +14,7 @@
   color: #fff;
 }
 .logo__letter--color {
-  color: #9e9e9e;
+  color: lightskyblue;
+  /* color: #9e9e9e; */
 }
 </style>

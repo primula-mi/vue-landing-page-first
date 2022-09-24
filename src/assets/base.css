@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
@@ -60,9 +61,6 @@
   position: relative;
   font-weight: normal;
 }
-html, body {
-  font-family: 'Roboto', sans-serif;
-}
 body {
   display: flex;
   align-items: flex-start;
@@ -79,4 +77,29 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+::selection {
+  background-color: lightskyblue;
+}
+::-moz-selection {
+  background-color: lightskyblue;
+}
+
+/* W3C standard
+   сейчас только для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #50545b;
+}
+
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: #50545b;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
 }

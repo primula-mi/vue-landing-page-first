@@ -15,8 +15,8 @@ import HeaderNavMenu from "@/components/HeaderNavMenu.vue";
 
 <style scoped>
 header {
-  background: #000;
-  padding: 1em 0;
+  background: #1c1f24;
+  padding: 0.5em 0;
 }
 header .container {
   display: flex;
