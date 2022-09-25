@@ -7,6 +7,7 @@ import FormMainPage from "@/components/FormMainPage.vue";
 import SubtitleItem from "@/components/SubtitleItem.vue";
 import ParagraphItem from "@/components/ParagraphItem.vue";
 import SocialMedia from "@/components/SocialMedia.vue";
+import TabsList from "@/components/TabsList.vue";
 let descriptions = {
   mainPage: {
     subtitle: {
@@ -46,6 +47,26 @@ let descriptions = {
       },
     },
   },
+  aboutPage: {
+    tabs: [{ text: "Tab 1" }, { text: "Tab 2" }, { text: "Tab 3" }],
+    description: {
+      subtitle: {
+        text: "Tabs with soft transitioning effect",
+        style: {
+          color: "#333333",
+          fontSize: 20,
+          fontFamily: "Open Sans",
+        },
+      },
+      paragraph: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+        style: {
+          fontSize: 14,
+          fontFamily: "Open Sans",
+        },
+      },
+    },
+  },
 };
 </script>
 
@@ -67,9 +88,9 @@ let descriptions = {
         <FormMainPage />
       </div>
     </section>
-    <section class="social-media">
+    <section class="social-media-page">
       <div class="container">
-        <div class="social-media__description">
+        <div class="social-media-page__description">
           <SubtitleItem
             :subtitle="descriptions.socialMedia.subtitle.text"
             :style="{
@@ -87,6 +108,15 @@ let descriptions = {
           />
         </div>
         <SocialMedia />
+      </div>
+    </section>
+    <section class="about-page">
+      <div class="container">
+        <TabsList
+          :tabs="descriptions.aboutPage.tabs"
+          :description="descriptions.aboutPage.description"
+        />
+        <img class="about-page__img" src="@/assets/img/city.png" alt="" />
       </div>
     </section>
   </main>
@@ -112,15 +142,25 @@ let descriptions = {
 .transparent-btn {
   margin-top: 3em;
 }
-.social-media {
+.social-media-page {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   /* height: 10vh; */
 }
-.social-media__description {
+.social-media-page__description {
   width: 40%;
   margin: 1em 0;
+}
+.about-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+.about-page__img {
+  width: 25%;
 }
 </style>
