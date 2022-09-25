@@ -8,6 +8,7 @@ defineProps(["subtitle"]);
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
 h2 {
   color: #000;
+  font-weight: bold;
 }
 h2::selection {
   background-color: lightskyblue;

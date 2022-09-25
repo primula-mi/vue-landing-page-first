@@ -19,6 +19,7 @@ let props = defineProps(["subtitle", "paragraph"]);
   <ParagraphItem
     :paragraph="props.paragraph.text"
     :style="{
+      color: `${props.paragraph.style.color}`,
       fontSize: `${props.paragraph.style.fontSize}px`,
       fontFamily: `${props.paragraph.style.fontFamily}, Arial, sans-serif`,
     }"

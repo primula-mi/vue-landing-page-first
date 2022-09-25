@@ -9,6 +9,6 @@ defineProps(["paragraph"]);
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
 p {
-  color: #fff;
+  color: #86878b;
 }
 </style>
