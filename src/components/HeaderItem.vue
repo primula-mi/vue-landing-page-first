@@ -16,12 +16,12 @@ import HeaderNavMenu from "@/components/HeaderNavMenu.vue";
 <style scoped>
 header {
   background: #1c1f24;
-  padding: 0.5em 0;
 }
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  padding: 0.5em 0;
 }
 </style>
