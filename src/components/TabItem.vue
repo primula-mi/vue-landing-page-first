@@ -16,7 +16,7 @@ let props = defineProps(["text"]);
   font-family: "Open Sans", "Arial", sans-serif;
 }
 .box:hover {
-  background: lightskyblue;
+  background: #777777;
   /* color: #2c3e50; */
 }
 </style>
