@@ -8,6 +8,8 @@ import SubtitleItem from "@/components/SubtitleItem.vue";
 import ParagraphItem from "@/components/ParagraphItem.vue";
 import SocialMedia from "@/components/SocialMedia.vue";
 import TabsList from "@/components/TabsList.vue";
+import ImgWithShadow from "@/components/ImgWithShadow.vue";
+import SubListWithIcon from "@/components/SubListWithIcon.vue";
 let descriptions = {
   mainPage: {
     subtitle: {
@@ -48,10 +50,72 @@ let descriptions = {
     },
   },
   aboutPage: {
-    tabs: [{ text: "Tab 1" }, { text: "Tab 2" }, { text: "Tab 3" }],
-    description: {
+    tabs: [
+      { text: "Tab 1", isActive: true },
+      { text: "Tab 2", isActive: false },
+      { text: "Tab 3", isActive: false },
+    ],
+    descriptions: [
+      {
+        isActive: true,
+        subtitle: {
+          text: "Tabs 1 with soft transitioning effect",
+          style: {
+            color: "#333333",
+            fontSize: 20,
+            fontFamily: "Open Sans",
+          },
+        },
+        paragraph: {
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+          style: {
+            fontSize: 14,
+            fontFamily: "Open Sans",
+          },
+        },
+      },
+      {
+        isActive: false,
+        subtitle: {
+          text: "Tabs 2 with soft transitioning effect",
+          style: {
+            color: "#333333",
+            fontSize: 20,
+            fontFamily: "Open Sans",
+          },
+        },
+        paragraph: {
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+          style: {
+            fontSize: 14,
+            fontFamily: "Open Sans",
+          },
+        },
+      },
+      {
+        isActive: false,
+        subtitle: {
+          text: "Tabs 3 with soft transitioning effect",
+          style: {
+            color: "#333333",
+            fontSize: 20,
+            fontFamily: "Open Sans",
+          },
+        },
+        paragraph: {
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+          style: {
+            fontSize: 14,
+            fontFamily: "Open Sans",
+          },
+        },
+      },
+    ],
+  },
+  firstTopicPage: {
+    descriptions: {
       subtitle: {
-        text: "Tabs with soft transitioning effect",
+        text: "Sub list section",
         style: {
           color: "#333333",
           fontSize: 20,
@@ -59,13 +123,23 @@ let descriptions = {
         },
       },
       paragraph: {
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
         style: {
           fontSize: 14,
           fontFamily: "Open Sans",
         },
       },
     },
+    subList: [
+      {
+        subTitle: "Title",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      },
+      {
+        subTitle: "Title",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      },
+    ],
   },
 };
 </script>
@@ -114,9 +188,21 @@ let descriptions = {
       <div class="container">
         <TabsList
           :tabs="descriptions.aboutPage.tabs"
-          :description="descriptions.aboutPage.description"
+          :descriptions="descriptions.aboutPage.descriptions"
         />
         <img class="about-page__img" src="@/assets/img/city.png" alt="" />
+      </div>
+    </section>
+    <section class="first-topic-page">
+      <div class="container">
+        <ImgWithShadow imgSrc="/src/assets/img/banner-main.jpg" />
+        <div class="first-topic-page__description">
+          <DescriptionItem
+            :subtitle="descriptions.firstTopicPage.descriptions.subtitle"
+            :paragraph="descriptions.firstTopicPage.descriptions.paragraph"
+          />
+          <SubListWithIcon :subList="descriptions.firstTopicPage.subList" />
+        </div>
       </div>
     </section>
   </main>
@@ -144,23 +230,36 @@ let descriptions = {
 }
 .social-media-page {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   /* height: 10vh; */
 }
+.social-media-page .container {
+  padding: 1em 0;
+}
 .social-media-page__description {
   width: 40%;
-  margin: 1em 0;
+  /* margin: 1em 0; */
 }
 .about-page {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #f5f5f5;
 }
 .about-page__img {
   width: 25%;
+}
+.first-topic-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first-topic-page__description {
+  width: 55%;
+  margin-left: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 </style>
