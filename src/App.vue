@@ -10,6 +10,8 @@ import SocialMedia from "@/components/SocialMedia.vue";
 import TabsList from "@/components/TabsList.vue";
 import ImgWithShadow from "@/components/ImgWithShadow.vue";
 import SubListWithIcon from "@/components/SubListWithIcon.vue";
+import HeaderCenterPage from "@/components/HeaderCenterPage.vue";
+import ReasonList from "@/components/ReasonList.vue";
 let descriptions = {
   mainPage: {
     subtitle: {
@@ -141,6 +143,51 @@ let descriptions = {
       },
     ],
   },
+  secondTopicPage: {
+    descriptions: {
+      subtitle: {
+        text: "Standart pictures section",
+        style: {
+          color: "#333333",
+          fontSize: 20,
+          fontFamily: "Open Sans",
+        },
+      },
+      paragraph: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+        style: {
+          fontSize: 14,
+          fontFamily: "Open Sans",
+        },
+      },
+    },
+  },
+  thirdTopicPage: {
+    headerCenter: {
+      subtitle: "Why this is awesom",
+      paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    reasonItem: [
+      {
+        imgSrc: "/src/assets/img/icon/cat-list-icon.png",
+        subtitle: "Thoughtful Design",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra",
+      },
+      {
+        imgSrc: "/src/assets/img/icon/cat-list-icon.png",
+        subtitle: "Well Crafted",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra",
+      },
+      {
+        imgSrc: "/src/assets/img/icon/cat-list-icon.png",
+        subtitle: "Easy to Customize",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra",
+      },
+    ],
+  },
 };
 </script>
 
@@ -205,6 +252,25 @@ let descriptions = {
         </div>
       </div>
     </section>
+    <section class="second-topic-page">
+      <div class="container">
+        <div class="second-topic-page__description">
+          <DescriptionItem
+            :subtitle="descriptions.secondTopicPage.descriptions.subtitle"
+            :paragraph="descriptions.secondTopicPage.descriptions.paragraph"
+          />
+        </div>
+        <ImgWithShadow imgSrc="/src/assets/img/banner-main.jpg" />
+      </div>
+    </section>
+    <section class="third-topic-page">
+      <div class="container">
+        <HeaderCenterPage
+          :description="descriptions.thirdTopicPage.headerCenter"
+        />
+        <ReasonList :itemList="descriptions.thirdTopicPage.reasonItem" />
+      </div>
+    </section>
   </main>
 </template>
 
@@ -261,5 +327,30 @@ let descriptions = {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.second-topic-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+.second-topic-page .container {
+  justify-content: space-between;
+}
+.second-topic-page__description {
+  width: 43%;
+}
+.section-topic--page .img-with-shadow {
+  width: 40%;
+}
+
+.third-topic-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.third-topic-page .container {
+  flex-direction: column;
+  align-items: center;
 }
 </style>

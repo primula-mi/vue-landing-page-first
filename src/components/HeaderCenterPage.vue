@@ -1,0 +1,41 @@
+<script setup>
+const props = defineProps(["description"]);
+</script>
+<template>
+  <div class="header-center">
+    <h2 class="header-center__subtitle">{{ props.description.subtitle }}</h2>
+    <svg
+      class="header-center__line"
+      viewBox="0 0 100 1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="0" y1="0" x2="30" y2="0"></line>
+    </svg>
+    <p class="header-center__text">{{ props.description.paragraph }}</p>
+  </div>
+</template>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+.header-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.header-center__subtitle {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+.header-center__line {
+  fill: lightskyblue;
+  stroke: lightskyblue;
+  margin: 1em 0;
+  padding-left: 40%;
+}
+.header-center__text {
+  color: #86878b;
+  font-size: 14px;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+</style>
