@@ -14,7 +14,7 @@ const props = defineProps(["subList"]);
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 .sub-list__item {
-  background-image: url(/src/assets/img/icon/cat-list-icon.png);
+  background-image: url(/src/assets/img/icon/lapa-icon.svg);
   background-repeat: no-repeat;
   background-size: 3em;
   background-position: left center;

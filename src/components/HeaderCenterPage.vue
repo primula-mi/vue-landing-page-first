@@ -17,6 +17,9 @@ const props = defineProps(["description"]);
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
+
+/* TODO подключить шрифт из макета */
 .header-center {
   display: flex;
   align-items: center;
@@ -24,8 +27,8 @@ const props = defineProps(["description"]);
 }
 .header-center__subtitle {
   text-transform: uppercase;
-  font-size: 30px;
-  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 36px;
+  font-family: "Raleway", "Arial", sans-serif;
 }
 .header-center__line {
   fill: lightskyblue;

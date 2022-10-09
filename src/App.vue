@@ -12,6 +12,8 @@ import ImgWithShadow from "@/components/ImgWithShadow.vue";
 import SubListWithIcon from "@/components/SubListWithIcon.vue";
 import HeaderCenterPage from "@/components/HeaderCenterPage.vue";
 import ReasonList from "@/components/ReasonList.vue";
+import PriceList from "@/components/PriceList.vue";
+import FeedbackList from "@/components/FeedbackList.vue";
 let descriptions = {
   mainPage: {
     subtitle: {
@@ -169,22 +171,99 @@ let descriptions = {
     },
     reasonItem: [
       {
-        imgSrc: "/src/assets/img/icon/cat-list-icon.png",
+        imgSrc: "/src/assets/img/icon/done-icon.svg",
         subtitle: "Thoughtful Design",
         paragraph:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra",
       },
       {
-        imgSrc: "/src/assets/img/icon/cat-list-icon.png",
+        imgSrc: "/src/assets/img/icon/lapa-icon.svg",
         subtitle: "Well Crafted",
         paragraph:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra",
       },
       {
-        imgSrc: "/src/assets/img/icon/cat-list-icon.png",
+        imgSrc: "/src/assets/img/icon/like-icon.svg",
         subtitle: "Easy to Customize",
         paragraph:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra",
+      },
+    ],
+  },
+  pricePage: {
+    headerCenter: {
+      subtitle: "Pricing option",
+      paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    prices: [
+      {
+        title: "Basic",
+        cost: "0",
+        subtitle: "Free for Life",
+        features: [
+          "1 gb of space",
+          "10 gb of bandwidth",
+          "3 websites",
+          "Basic Customization",
+          "Wordpress integration",
+          "Email support",
+        ],
+      },
+      {
+        title: "Professional",
+        cost: "19",
+        subtitle: "Monthly Payment",
+        specialSubtitle: "Our most popular",
+        features: [
+          "5 gb of space",
+          "50 gb of bandwidth",
+          "12 websites",
+          "Advanced Customization",
+          "Wordpress integration",
+          "Email support",
+        ],
+      },
+      {
+        title: "Enterprise",
+        cost: "70",
+        subtitle: "Monthly Payment",
+        features: [
+          "Unlimited space",
+          "unlimited bandwidth",
+          "100 websites",
+          "Advanced Customization",
+          "Wordpress integration",
+          "24/7 customer support",
+        ],
+      },
+    ],
+  },
+  feedbackPage: {
+    headerCenter: {
+      subtitle: "what our customers are saying",
+      paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    feedbacks: [
+      {
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus accusamus expedita repellat similique odio aspernatur ex, architecto eaque quo suscipit.",
+        name: "Jeremy H.",
+        career: "Manager",
+        avatarSrc: "/src/assets/img/icon/done-icon.svg",
+      },
+      {
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus accusamus expedita repellat similique odio aspernatur ex, architecto eaque quo suscipit.",
+        name: "John S.",
+        career: "Freelancer",
+        avatarSrc: "/src/assets/img/icon/lapa-icon.svg",
+      },
+      {
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus accusamus expedita repellat similique odio aspernatur ex, architecto eaque quo suscipit.",
+        name: "Susan W.",
+        career: "Photographer",
+        avatarSrc: "/src/assets/img/icon/like-icon.svg",
       },
     ],
   },
@@ -271,6 +350,20 @@ let descriptions = {
         <ReasonList :itemList="descriptions.thirdTopicPage.reasonItem" />
       </div>
     </section>
+    <section class="price-page">
+      <div class="container">
+        <HeaderCenterPage :description="descriptions.pricePage.headerCenter" />
+        <PriceList :prices="descriptions.pricePage.prices" />
+      </div>
+    </section>
+    <section class="feedback-page">
+      <div class="container">
+        <HeaderCenterPage
+          :description="descriptions.feedbackPage.headerCenter"
+        />
+        <FeedbackList :feedbacks="descriptions.feedbackPage.feedbacks" />
+      </div>
+    </section>
   </main>
 </template>
 
@@ -343,7 +436,6 @@ let descriptions = {
 .section-topic--page .img-with-shadow {
   width: 40%;
 }
-
 .third-topic-page {
   display: flex;
   justify-content: center;
@@ -352,5 +444,30 @@ let descriptions = {
 .third-topic-page .container {
   flex-direction: column;
   align-items: center;
+}
+.price-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+.price-page .container {
+  flex-direction: column;
+  align-items: center;
+}
+.price-list {
+  margin-top: 4em;
+}
+.feedback-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feedback-page .container {
+  flex-direction: column;
+  align-items: center;
+}
+.feedback-list {
+  margin-top: 4em;
 }
 </style>

@@ -20,7 +20,7 @@ const props = defineProps(["description"]);
 }
 .reason-item__subtitle {
   margin-bottom: 1em;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   font-family: "Open Sans", "Arial", sans-serif;
 }
