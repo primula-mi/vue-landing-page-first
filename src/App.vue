@@ -14,6 +14,8 @@ import HeaderCenterPage from "@/components/HeaderCenterPage.vue";
 import ReasonList from "@/components/ReasonList.vue";
 import PriceList from "@/components/PriceList.vue";
 import FeedbackList from "@/components/FeedbackList.vue";
+import FormContactUs from "@/components/FormContactUs.vue";
+import FooterItem from "@/components/FooterItem.vue";
 let descriptions = {
   mainPage: {
     subtitle: {
@@ -267,6 +269,22 @@ let descriptions = {
       },
     ],
   },
+  fourthTopicPage: {
+    headerCenter: {
+      subtitle: "Stylish axure design",
+      paragraph:
+        "Use the sections you need, remove the ones you don't.  Create gorgeous prototypes faster than ever!",
+    },
+    transparentButton: {
+      buttonText: "Download",
+    },
+  },
+  contactPage: {
+    headerCenter: {
+      subtitle: "Contact us",
+      paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+  },
 };
 </script>
 
@@ -363,6 +381,30 @@ let descriptions = {
         />
         <FeedbackList :feedbacks="descriptions.feedbackPage.feedbacks" />
       </div>
+    </section>
+    <section class="fourth-topic-page">
+      <div class="container">
+        <HeaderCenterPage
+          :description="descriptions.fourthTopicPage.headerCenter"
+          :class="{ colorWhite: true }"
+        />
+        <TransparentButton
+          :buttonText="
+            descriptions.fourthTopicPage.transparentButton.buttonText
+          "
+        />
+      </div>
+    </section>
+    <section class="contact-page">
+      <div class="container">
+        <HeaderCenterPage
+          :description="descriptions.contactPage.headerCenter"
+        />
+        <FormContactUs />
+      </div>
+    </section>
+    <section class="footer-page">
+      <FooterItem />
     </section>
   </main>
 </template>
@@ -469,5 +511,27 @@ let descriptions = {
 }
 .feedback-list {
   margin-top: 4em;
+}
+.fourth-topic-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  background: #7c7c7c url(@/assets/img/banner-main.jpg) no-repeat center/cover;
+  background-blend-mode: multiply;
+}
+.fourth-topic-page .container {
+  flex-direction: column;
+  align-items: center;
+}
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-page .container {
+  flex-direction: column;
+  align-items: center;
 }
 </style>
