@@ -16,7 +16,7 @@ const props = defineProps(["description"]);
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
 
 /* TODO подключить шрифт из макета */
@@ -40,5 +40,16 @@ const props = defineProps(["description"]);
   color: #86878b;
   font-size: 14px;
   font-family: "Open Sans", Arial, sans-serif;
+}
+.colorWhite {
+  color: #fff;
+}
+.colorWhite .header-center__line {
+  fill: #fff;
+  stroke: #fff;
+}
+.colorWhite .header-center__text {
+  color: #fff;
+  font-weight: 300;
 }
 </style>
