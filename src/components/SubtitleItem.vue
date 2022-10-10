@@ -10,7 +10,4 @@ h2 {
   color: #000;
   font-weight: bold;
 }
-h2::selection {
-  background-color: lightskyblue;
-}
 </style>
