@@ -79,10 +79,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 ::selection {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
+  background-color: #ccc;
 }
 ::-moz-selection {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
+  background-color: #ccc;
 }
 
 /* W3C standard
