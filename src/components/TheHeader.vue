@@ -1,21 +1,22 @@
 <script setup>
 import Logo from "@/components/LogoItem.vue";
-import HeaderNavMenu from "@/components/HeaderNavMenu.vue";
+import HeaderNavMenuList from "@/components/HeaderNavMenuList.vue";
+const props = defineProps(["headerData"]);
 </script>
 
 <template>
   <header>
     <div class="container">
       <Logo />
-      <HeaderNavMenu />
+      <HeaderNavMenuList :navMenuItems="props.headerData" />
     </div>
-    <!-- <div class="wrapper"></div> -->
   </header>
 </template>
 
 <style scoped>
 header {
   background: #1c1f24;
+  z-index: 5;
 }
 header .container {
   display: flex;

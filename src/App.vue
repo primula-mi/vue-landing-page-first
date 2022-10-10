@@ -1,5 +1,5 @@
 <script setup>
-import HeaderItem from "@/components/HeaderItem.vue";
+import TheHeader from "@/components/TheHeader.vue";
 import Logo from "@/components/LogoItem.vue";
 import DescriptionItem from "@/components/DescriptionItem.vue";
 import TransparentButton from "@/components/TransparentButton.vue";
@@ -17,6 +17,13 @@ import FeedbackList from "@/components/FeedbackList.vue";
 import FormContactUs from "@/components/FormContactUs.vue";
 import FooterItem from "@/components/FooterItem.vue";
 let descriptions = {
+  header: [
+    { title: "Features", href: "#features" },
+    { title: "About", href: "#about" },
+    { title: "Pricing", href: "#pricing" },
+    { title: "Reviews", href: "#reviews" },
+    { title: "Contacts", href: "#contacts" },
+  ],
   mainPage: {
     subtitle: {
       text: "Modern axure template for beautiful prototypes",
@@ -289,7 +296,7 @@ let descriptions = {
 </script>
 
 <template>
-  <HeaderItem />
+  <TheHeader :headerData="descriptions.header" />
   <main>
     <section class="main-page">
       <div class="container">
