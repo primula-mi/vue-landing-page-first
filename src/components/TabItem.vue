@@ -2,11 +2,14 @@
 let props = defineProps(["text"]);
 </script>
 <template>
-  <div class="box">{{ props.text }}</div>
+  <li class="tabs-list__item">
+    {{ props.text }}
+  </li>
 </template>
 
 <style scoped>
-.box {
+.tabs-list__item {
+  cursor: pointer;
   padding: 2.2em;
   background: #333333;
   color: #fff;
@@ -15,8 +18,21 @@ let props = defineProps(["text"]);
   font-weight: 700;
   font-family: "Open Sans", "Arial", sans-serif;
 }
-.box:hover {
+@media (max-width: 769px) {
+  .tabs-list__item {
+    padding: 1.5em;
+  }
+}
+@media (max-width: 600px) {
+  .tabs-list__item {
+    padding: 1em;
+  }
+}
+.tabs-list__item:hover {
   background: #777777;
-  /* color: #2c3e50; */
+}
+.active,
+.active:hover {
+  background: lightskyblue;
 }
 </style>

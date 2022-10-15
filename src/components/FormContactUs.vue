@@ -1,10 +1,6 @@
 <script setup>
 import FormInputItem from "@/components/FormInputItem.vue";
-let forminputs = [
-  { placeholder: "Name" },
-  { placeholder: "Email" },
-  { placeholder: "Subject" },
-];
+let props = defineProps(["formData"]);
 </script>
 <template>
   <form class="form" action="">
@@ -12,8 +8,8 @@ let forminputs = [
       <ul class="form__list">
         <li
           class="form__item"
-          v-for="input in forminputs"
-          :key="input.placeholder"
+          v-for="(input, idx) in props.formData.inputsplacehoder"
+          :key="idx"
         >
           <FormInputItem :placeholderText="input.placeholder" />
         </li>
@@ -43,8 +39,26 @@ let forminputs = [
   align-items: flex-end;
   margin: 4em 0 3em;
 }
+@media (max-width: 769px) {
+  .form__content {
+    /* width: 100%; */
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0;
+  }
+}
 .form__list {
   width: 47%;
+}
+@media (max-width: 769px) {
+  .form__list {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .form__list {
+    width: 90%;
+  }
 }
 .form__item {
   margin-top: 2em;
@@ -63,7 +77,22 @@ textarea {
   width: 47%;
   border: none;
   border-bottom: 1px solid #d6d6d6;
+  outline: none;
   font-size: 14px;
   font-family: "Open Sans", "Arial", sans-serif;
+}
+textarea:focus {
+  border-bottom: 1px solid #aaa;
+}
+@media (max-width: 769px) {
+  textarea {
+    width: 50%;
+    margin: 2em 0;
+  }
+}
+@media (max-width: 480px) {
+  textarea {
+    width: 90%;
+  }
 }
 </style>

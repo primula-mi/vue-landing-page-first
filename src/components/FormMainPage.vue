@@ -1,26 +1,22 @@
 <script setup>
 import FormInputItem from "@/components/FormInputItem.vue";
-let forminputs = [
-  { placeholder: "Name" },
-  { placeholder: "Email" },
-  { placeholder: "Password" },
-];
+let props = defineProps(["formData"]);
 </script>
 <template>
   <form class="form" action="">
     <h3 class="form__title">
-      Try Your <span class="form__title--color">FREE</span> Trial Today
+      Application for a <span class="form__title-accent">FREE</span> visit
     </h3>
     <ul class="form__list">
       <li
         class="form__item"
-        v-for="input in forminputs"
-        :key="input.placeholder"
+        v-for="(input, idx) in props.formData.inputsplacehoder"
+        :key="idx"
       >
         <FormInputItem :placeholderText="input.placeholder" />
       </li>
     </ul>
-    <button class="form__button" type="submit">Get Started</button>
+    <button class="form__button" type="submit">Send</button>
   </form>
 </template>
 
@@ -30,6 +26,17 @@ let forminputs = [
   width: 40%;
   margin-left: 7em;
 }
+@media (max-width: 769px) {
+  .form {
+    width: 70%;
+    margin: 0;
+  }
+}
+@media (max-width: 480px) {
+  .form {
+    width: 90%;
+  }
+}
 .form__title {
   padding: 0.7em 2em;
   background: #f5f5f5;
@@ -37,7 +44,7 @@ let forminputs = [
   font-weight: 700;
   font-family: "Open Sans", "Arial", sans-serif;
 }
-.form__title--color {
+.form__title-accent {
   color: lightskyblue;
 }
 .form__list {

@@ -29,12 +29,29 @@ const props = defineProps(["price"]);
 
 .price-list__item {
   width: 30%;
+  margin: 0 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #333;
   color: #fff;
   font-family: "Open Sans", "Arial", sans-serif;
+}
+@media (max-width: 769px) {
+  .price-list__item {
+    display: none;
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .price-list__item {
+    width: 90%;
+  }
+}
+@media (max-width: 769px) {
+  .price-list__item.active {
+    display: flex;
+  }
 }
 .price-list__title {
   width: 100%;
@@ -46,7 +63,6 @@ const props = defineProps(["price"]);
   text-align: center;
 }
 .price-list__cost {
-  /* line-height: 20px; */
   padding-top: 0.5em;
   padding-bottom: 0.6em;
   font-size: 26px;
@@ -88,7 +104,6 @@ const props = defineProps(["price"]);
 .price-list__features-item {
   padding: 0.2em 0;
   border-bottom: 1px solid #f5f5f5;
-  /* line-height: 30px; */
   text-transform: uppercase;
   font-size: 14px;
   font-family: "Open Sans", "Arial", sans-serif;

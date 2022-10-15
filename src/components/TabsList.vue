@@ -1,38 +1,27 @@
 <script setup>
 import TabItem from "@/components/TabItem.vue";
 import DescriptionItem from "@/components/DescriptionItem.vue";
-// import {ref} from "vue";
+import { ref } from "vue";
 let props = defineProps(["tabs", "descriptions"]);
-// let tabs = ref(props.descriptions);
-// let descriptions = ref(props.descriptions);
-function selectTab(index) {
-  props.tabs.forEach((tab, idx) => {
-    tab.isActive = idx === index;
-  });
-  props.descriptions.forEach((desc, idx) => {
-    desc.isActive = idx === index;
-  });
-}
+let isActive = ref(0);
 </script>
 <template>
   <div class="tabs-container">
     <ul class="tabs-list">
-      <li
-        class="tabs-list__item"
+      <TabItem
+        :text="tab.text"
         v-for="(tab, idx) in props.tabs"
-        :key="tab.text"
-        @click="selectTab(idx)"
-        :class="{ 'is-active': tab.isActive }"
-      >
-        <TabItem :text="tab.text" />
-      </li>
+        :key="idx"
+        @click="isActive = idx"
+        :class="[isActive === idx ? 'active' : '']"
+      />
     </ul>
     <ul class="descriptions-list">
       <li
         class="descriptions-list__item"
         v-for="(description, idx) in props.descriptions"
         :key="idx"
-        v-show="description.isActive"
+        v-show="isActive === idx"
       >
         <DescriptionItem
           :subtitle="description.subtitle"
@@ -45,30 +34,42 @@ function selectTab(index) {
 
 <style scoped>
 .tabs-container {
+  padding-right: 26em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 6em;
-  width: 75%;
+}
+@media (max-width: 769px) {
+  .tabs-container {
+    justify-content: space-around;
+    padding: 0;
+  }
+}
+@media (max-width: 600px) {
+  .tabs-container {
+    flex-direction: column;
+  }
 }
 .tabs-list {
   width: 15%;
 }
-.tabs-list__item {
-  cursor: pointer;
+@media (max-width: 769px) {
+  .tabs-list {
+    width: fit-content;
+  }
+}
+@media (max-width: 600px) {
+  .tabs-list {
+    display: flex;
+    margin-bottom: 1em;
+  }
 }
 .descriptions-list {
-  margin-left: 6em;
   width: 75%;
 }
-/* .descriptions-list__item {
-  display: none;
-}
-.descriptions-list__item.is-active {
-  display: block;
-} */
-.tabs-list__item.is-active .box {
-  background: lightskyblue;
-  /* color: #2c3e50; */
+@media (max-width: 600px) {
+  .descriptions-list {
+    width: 95%;
+  }
 }
 </style>

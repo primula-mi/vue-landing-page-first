@@ -22,10 +22,8 @@ const props = defineProps(["navMenuItems"]);
   right: -100%;
   z-index: 4;
   width: 100%;
-  /* margin-top: 3%; */
   background: #1c1f24;
   transition: all 0.4s ease;
-  overflow: scroll;
 }
 .toggle-menu__nav.active {
   right: 0;

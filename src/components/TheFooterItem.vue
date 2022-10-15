@@ -20,8 +20,4 @@ import SocialMedia from "@/components/SocialMedia.vue";
   font-size: 12px;
   font-family: "Open Sans", "Arial", sans-serif;
 }
-.social-media-icon {
-  width: 20%;
-  margin: 0 0 0.3em;
-}
 </style>

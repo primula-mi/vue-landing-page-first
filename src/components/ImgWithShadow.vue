@@ -11,4 +11,9 @@ const props = defineProps(["imgSrc"]);
   width: 45%;
   box-shadow: 0 0 15px 0px #777;
 }
+@media (max-width: 769px) {
+  .img-with-shadow {
+    width: 80%;
+  }
+}
 </style>

@@ -28,3 +28,62 @@ ul {
   align-items: center;
   padding: 7em 0;
 }
+@media (max-width: 769px) {
+  .container {
+    width: 95%;
+    padding: 3em 0;  
+  }
+}
+
+
+.slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.prev,
+.next {
+  display: none;
+  background: none;
+  border: none;
+  color: #2c3e50;
+}
+@media (max-width: 769px) {
+  .prev,
+  .next {
+    display: block;
+  }
+}
+.arrow {
+  display: block;
+}
+.arrow:before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 0;
+  width: 15px;
+  height: 3px;
+  background: #2c3e50;
+}
+.arrow:after {
+  content: "";
+  position: relative;
+  top: 6px;
+  display: block;
+  width: 15px;
+  height: 3px;
+  background: #2c3e50;
+}
+.arrow--prev:before {
+  transform: rotate(135deg);
+}
+.arrow--prev:after {
+  transform: rotate(45deg);
+}
+.arrow--next:before {
+  transform: rotate(45deg);
+}
+.arrow--next:after {
+  transform: rotate(135deg);
+}

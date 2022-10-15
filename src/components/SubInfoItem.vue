@@ -1,14 +1,12 @@
 <script setup>
-const props = defineProps(["subList"]);
+const props = defineProps(["subItem"]);
 </script>
 
 <template>
-  <ul class="sub-list">
-    <li class="sub-list__item" v-for="(item, idx) in props.subList" :key="idx">
-      <h3 class="sub-list__title">{{ item.subTitle }}</h3>
-      <p class="sub-list__text">{{ item.text }}</p>
-    </li>
-  </ul>
+  <li class="sub-list__item">
+    <h3 class="sub-list__title">{{ props.subItem.subTitle }}</h3>
+    <p class="sub-list__text">{{ props.subItem.text }}</p>
+  </li>
 </template>
 
 <style scoped>

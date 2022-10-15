@@ -25,4 +25,9 @@ const props = defineProps(["navMenuItems"]);
   margin: 0;
   padding: 0;
 }
+@media (max-width: 769px) {
+  .nav-menu {
+    display: none;
+  }
+}
 </style>

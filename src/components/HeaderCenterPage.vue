@@ -24,8 +24,15 @@ const props = defineProps(["description"]);
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 4em;
+}
+@media (max-width: 769px) {
+  .header-center {
+    margin-bottom: 2em;
+  }
 }
 .header-center__subtitle {
+  text-align: center;
   text-transform: uppercase;
   font-size: 36px;
   font-family: "Raleway", "Arial", sans-serif;
